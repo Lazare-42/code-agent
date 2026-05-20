@@ -1,18 +1,22 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import localFont from "next/font/local"
 import "./globals.css"
 
 import type { ReactNode } from "react"
 import { Providers } from "@/components/providers"
 
-const geistSans = Geist({
+// Geist bundled locally (OFL) instead of next/font/google for hermetic
+// Nix builds; same CSS variables.
+const geistSans = localFont({
+  src: "./fonts/Geist.ttf",
   variable: "--font-geist-sans",
-  subsets: ["latin"],
+  weight: "100 900",
 })
 
-const geistMono = Geist_Mono({
+const geistMono = localFont({
+  src: "./fonts/GeistMono.ttf",
   variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: "100 900",
 })
 
 export const metadata: Metadata = {
