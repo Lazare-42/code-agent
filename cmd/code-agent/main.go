@@ -1,0 +1,37 @@
+package main
+
+import (
+	"context"
+	"errors"
+	"os"
+	"os/signal"
+	"syscall"
+
+	"github.com/lazrossi/code-agent/cmd/code-agent/cmd"
+)
+
+const (
+	exitCodeError       = 1
+	exitCodeInterrupted = 130 // 128 + SIGINT
+)
+
+func main() {
+	os.Exit(run())
+}
+
+func run() int {
+	ctx, cancel := signal.NotifyContext(context.Background(), os.Interrupt, syscall.SIGTERM)
+	defer cancel()
+
+	if err := cmd.ExecuteContext(ctx); err != nil {
+		if isSignalCanceled(err, ctx) {
+			return exitCodeInterrupted
+		}
+		return exitCodeError
+	}
+	return 0
+}
+
+func isSignalCanceled(err error, ctx context.Context) bool {
+	return errors.Is(err, context.Canceled) && ctx.Err() == context.Canceled
+}

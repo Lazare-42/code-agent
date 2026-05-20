@@ -1,4 +1,4 @@
-code-agent
+/code-agent
 *.db
 *.db-journal
 *.db-wal
