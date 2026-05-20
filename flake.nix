@@ -14,7 +14,7 @@
           pname = "code-agent";
           version = "0.1.0";
           src = ./.;
-          vendorHash = "sha256-WON+CAx3Epzf1btgj+QSoSM3OFwsoag9LKnAswvPGtg=";
+          vendorHash = "sha256-478T/7A5V94DPG8Mldbp/Uc28wlZeWe46q61uzJnOZM=";
           subPackages = [ "cmd/code-agent" ];
           # mattn/go-sqlite3 needs cgo (enabled by default in buildGoModule).
         };
