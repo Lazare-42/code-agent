@@ -1,0 +1,13 @@
+[Unit]
+Description=Code Agent — GitHub issue agent dispatcher
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=lazrossi
+Environment=CODE_AGENT_HOME=/home/lazrossi/.code-agent
+ExecStart=/usr/local/bin/code-agent poll
+TimeoutStartSec=1800
+StandardOutput=journal
+StandardError=journal

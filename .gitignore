@@ -1,0 +1,11 @@
+code-agent
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# frontend build output / deps
+frontend/node_modules/
+frontend/.next/
+node_modules/
+.next/
