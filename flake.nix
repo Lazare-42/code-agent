@@ -26,8 +26,8 @@
             pname = "code-agent-frontend";
             version = "0.1.0";
             src = ./frontend;
-            nativeBuildInputs = [ pkgs.nodejs_22 pkgs.pnpm.configHook pkgs.makeWrapper ];
-            pnpmDeps = pkgs.pnpm.fetchDeps {
+            nativeBuildInputs = [ pkgs.nodejs_22 pkgs.pnpmConfigHook pkgs.makeWrapper ];
+            pnpmDeps = pkgs.fetchPnpmDeps {
               inherit (finalAttrs) pname version src;
               fetcherVersion = 2;
               hash = "sha256-5fl9ciCeSQ47taRYuhhLpxWdFXkiMkAhaNs20oJLD5Q=";
