@@ -29,8 +29,8 @@
             nativeBuildInputs = [ pkgs.nodejs_22 pkgs.pnpm pkgs.pnpmConfigHook pkgs.makeWrapper ];
             pnpmDeps = pkgs.fetchPnpmDeps {
               inherit (finalAttrs) pname version src;
-              fetcherVersion = 2;
-              hash = "sha256-+KGO1248tWtFZZyMHB/EYn1Smv1YhEQVZOpz+1jGwck=";
+              fetcherVersion = 3;
+              hash = "sha256-l+JrLjAAISX8gVJKq7vpzikJJf2DjWqhSyPTtjEzyek=";
             };
             env = {
               NEXT_TELEMETRY_DISABLED = "1";
