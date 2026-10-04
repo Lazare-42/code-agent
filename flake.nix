@@ -30,7 +30,7 @@
             pnpmDeps = pkgs.fetchPnpmDeps {
               inherit (finalAttrs) pname version src;
               fetcherVersion = 4;
-              hash = "sha256-IfsFHhuyEt32Xx9oVisr4iDJOz6s6fzB/PjrX+7ML8U=";
+              hash = "sha256-xlIoQyfh4MNMHxpsCjJ6QF+3fDXrqD4c0ueArbiIfk4=";
             };
             env = {
               NEXT_TELEMETRY_DISABLED = "1";
